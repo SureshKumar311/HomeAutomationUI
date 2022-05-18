@@ -1,6 +1,7 @@
 # aweliv
 
-A new Flutter project.
+A flutter demo project for Home Automation and IOT
+this is not function code , only ui code available
 
 ## Getting Started
 
