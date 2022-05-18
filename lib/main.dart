@@ -71,6 +71,28 @@ class _HomePageState extends State<HomePage> {
   double sliderValue = 0.0;
   @override
   Widget build(BuildContext context) {
+    var tabChildren = Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        children: [
+          Column(
+            children: [
+              customCard('Lighting1'),
+              const SizedBox(height: 20),
+              customCard('Lighting2'),
+            ],
+          ),
+          const SizedBox(width: 20),
+          Column(
+            children: [
+              customCard('Lighting3'),
+              const SizedBox(height: 20),
+              customCard('Lighting4'),
+            ],
+          ),
+        ],
+      ),
+    );
     return Scaffold(
       body: DefaultTabController(
         length: 3,
@@ -260,30 +282,9 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 300,
                 child: TabBarView(children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            customCard('Lighting'),
-                            const SizedBox(height: 20),
-                            customCard('Lighting'),
-                          ],
-                        ),
-                        const SizedBox(width: 20),
-                        Column(
-                          children: [
-                            customCard('Lighting'),
-                            const SizedBox(height: 20),
-                            customCard('Lighting'),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Tab(text: 'Living room'),
-                  const Tab(text: 'Living room')
+                  tabChildren,
+                  tabChildren,
+                  tabChildren,
                 ]),
               ),
               const SizedBox(height: 20),
